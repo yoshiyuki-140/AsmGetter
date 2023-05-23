@@ -36,7 +36,7 @@ def main():
     while True:
         H = input("4桁以内で16進数を入力してください\n例:1f5c\n終了するためには'q'を入力してください\n >> ")
         if len(H) > 4:
-            raise Exception("Inputted value must be with 4 digit!")
+            raise Exception("Inputted value must be within 4 digit!")
         exitCommand = ['q', 'Q', 'exit', 'EXIT']
         if H in exitCommand:
             break
