@@ -26,7 +26,7 @@ def showAsmFromOpeCode(H: str):
         '1111': 'j'}
 
     sv = str(bin(int('0x'+H, 16))).lstrip('0b')
-    vstr = f"HEX -> {hex(int('0x'+H,16))}:\nBIN -> {f'{sv[:-13]}_{sv[-13:-9]}_{sv[-9:-5]}_{sv[-5:-1]}'.zfill(19)}"
+    vstr = f"HEX -> {hex(int('0x'+H,16))}\nBIN -> {f'{sv[:-13]}_{sv[-13:-9]}_{sv[-9:-5]}_{sv[-5:-1]}'.zfill(19)}"
     print(vstr)
     for opC in list(opeCodeDict.keys()):
         if opC == sv[:-13].zfill(4):
