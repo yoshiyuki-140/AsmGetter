@@ -26,11 +26,14 @@ def showAsmFromOpeCode(H: str):
         '1111': 'j'}
 
     sv = str(bin(int('0x'+H, 16))).lstrip('0b')
-    vstr = f"HEX -> {hex(int('0x'+H,16))}\nBIN -> {f'{sv[:-13]}_{sv[-13:-9]}_{sv[-9:-5]}_{sv[-5:-1]}'.zfill(19)}"
-    print(vstr)
+    print(sv[:-12])
+    print(sv[-13:-9])
+    print(f"HEX -> {hex(int('0x'+H,16))}")
+    print(f"BIN -> {f'{sv[:-12]}_{sv[-13:-9]}_{sv[-9:-5]}_{sv[-5:-1]}'.zfill(19)}")
     for opC in list(opeCodeDict.keys()):
-        if opC == sv[:-13].zfill(4):
+        if opC == sv[:-14].zfill(4):
             print(f"ASM -> {opC}:{opeCodeDict[opC]}")
+
 
 def main():
     while True:
@@ -41,6 +44,7 @@ def main():
         if H in exitCommand:
             break
         showAsmFromOpeCode(H)
+
 
 if __name__ == "__main__":
     main()
